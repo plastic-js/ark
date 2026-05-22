@@ -1,0 +1,132 @@
+{
+    "name": "@plastic-js/ark",
+    "version": "1.0.2",
+    "type": "module",
+    "description": "A headless, accessible UI component library for the Plastic JSX runtime.",
+    "license": "MIT",
+    "author": "zzzgit",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/plastic-js/ark.git"
+    },
+    "homepage": "https://github.com/plastic-js/ark#readme",
+    "bugs": {
+        "url": "https://github.com/plastic-js/ark/issues"
+    },
+    "main": "./dist/index.js",
+    "exports": {
+        ".": "./dist/index.js",
+        "./anatomy": "./dist/components/anatomy.js",
+        "./factory": "./dist/components/factory.js",
+        "./environment": "./dist/providers/environment/index.js",
+        "./interaction": "./dist/providers/interaction/index.js",
+        "./locale": "./dist/providers/locale/index.js",
+        "./*": "./dist/components/*/index.js"
+    },
+    "dependencies": {
+        "@plastic-js/zag": "0.1.1",
+        "@zag-js/accordion": "1.40.0",
+        "@zag-js/anatomy": "1.40.0",
+        "@zag-js/avatar": "1.40.0",
+        "@zag-js/carousel": "1.40.0",
+        "@zag-js/checkbox": "1.40.0",
+        "@zag-js/clipboard": "1.40.0",
+        "@zag-js/collapsible": "1.40.0",
+        "@zag-js/collection": "1.40.0",
+        "@zag-js/color-picker": "1.40.0",
+        "@zag-js/combobox": "1.40.0",
+        "@zag-js/core": "1.40.0",
+        "@zag-js/date-input": "1.40.0",
+        "@zag-js/date-picker": "1.40.0",
+        "@zag-js/dialog": "1.40.0",
+        "@zag-js/dom-query": "1.40.0",
+        "@zag-js/drawer": "1.40.0",
+        "@zag-js/file-upload": "1.40.0",
+        "@zag-js/focus-trap": "1.40.0",
+        "@zag-js/focus-visible": "1.40.0",
+        "@zag-js/hover-card": "1.40.0",
+        "@zag-js/i18n-utils": "1.40.0",
+        "@zag-js/listbox": "1.40.0",
+        "@zag-js/menu": "1.40.0",
+        "@zag-js/number-input": "1.40.0",
+        "@zag-js/pagination": "1.40.0",
+        "@zag-js/popover": "1.40.0",
+        "@zag-js/presence": "1.40.0",
+        "@zag-js/progress": "1.40.0",
+        "@zag-js/radio-group": "1.40.0",
+        "@zag-js/rating-group": "1.40.0",
+        "@zag-js/select": "1.40.0",
+        "@zag-js/signature-pad": "1.40.0",
+        "@zag-js/slider": "1.40.0",
+        "@zag-js/splitter": "1.40.0",
+        "@zag-js/steps": "1.40.0",
+        "@zag-js/switch": "1.40.0",
+        "@zag-js/tabs": "1.40.0",
+        "@zag-js/tags-input": "1.40.0",
+        "@zag-js/toast": "1.40.0",
+        "@zag-js/toggle": "1.40.0",
+        "@zag-js/toggle-group": "1.40.0",
+        "@zag-js/tooltip": "1.40.0",
+        "@zag-js/tour": "1.40.0",
+        "@zag-js/tree-view": "1.40.0"
+    },
+    "peerDependencies": {
+        "@plastic-js/plastic": "^1.0.12",
+        "alien-signals": "^3.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.29.7",
+        "@babel/core": "^7.29.7",
+        "@emotion/css": "^11.13.5",
+        "@plastic-js/babel-preset-plastic": "^0.1.8",
+        "@playwright/test": "^1.60.0",
+        "@testing-library/dom": "^10.4.1",
+        "@testing-library/user-event": "^14.6.1",
+        "eslint": "^9.39.4",
+        "eslint-config-janus": "^9.0.21",
+        "eslint-plugin-react": "^7.37.5",
+        "globals": "^17.6.0",
+        "jsdom": "^29.1.1",
+        "vite": "^8.0.14",
+        "vitest": "^4.1.7"
+    },
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "anatomy.md"
+    ],
+    "keywords": [
+        "plastic",
+        "plastic-js",
+        "jsx",
+        "headless",
+        "ui",
+        "components",
+        "component-library",
+        "zag",
+        "zag-js",
+        "accessible",
+        "a11y",
+        "wai-aria"
+    ],
+    "engines": {
+        "node": ">=22"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "rm -rf dist && babel src --out-dir dist --extensions .js,.jsx --ignore 'src/**/tests/**,src/**/showcases/**,src/**/*.test.js' && find dist -name '*.js' -exec sed -i '' \"s/\\.jsx'/.js'/g\" {} +",
+        "prepublishOnly": "npm run build",
+        "generate:component": "node ./scripts/generate-component.js",
+        "test": "vitest run --config ./vitest.config.js",
+        "test:ci": "vitest --run --config ./vitest.config.js",
+        "e2e": "playwright test",
+        "e2e:smoke": "playwright test e2e/smoke.spec.js",
+        "e2e:interaction": "playwright test e2e/interaction.spec.js",
+        "e2e:ui": "playwright test --ui",
+        "e2e:report": "playwright show-report",
+        "lint": "eslint src"
+    }
+}

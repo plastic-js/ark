@@ -1,0 +1,4 @@
+{
+  "presets": ["@plastic-js/babel-preset-plastic"],
+  "parserOpts": { "plugins": ["jsx"] }
+}

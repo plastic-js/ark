@@ -1,0 +1,33 @@
+{
+    "name": "@plastic-js/zag",
+    "version": "0.1.1",
+    "type": "module",
+    "description": "Zag.js framework adapter for the Plastic JSX runtime.",
+    "license": "MIT",
+    "main": "./index.js",
+    "exports": {
+        ".": "./index.js",
+        "./*": "./*.js"
+    },
+    "files": [
+        "*.js",
+        "README.md"
+    ],
+    "dependencies": {
+        "@zag-js/core": "1.40.0",
+        "@zag-js/types": "1.40.0",
+        "@zag-js/utils": "1.40.0",
+        "clsx": "^2.1.1"
+    },
+    "peerDependencies": {
+        "@plastic-js/plastic": "^1.0.12",
+        "alien-signals": "^3.0.0"
+    },
+    "sideEffects": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "test": "node test/_runner.js"
+    }
+}

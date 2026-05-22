@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ark-plastic showcase</title>
+		<style>
+			:root {
+				--ink: #1d2935;
+				--muted: #5b6b7a;
+				--accent: #4e6cff;
+				--bg: #f6f7fb;
+				--panel: #ffffff;
+			}
+			* { box-sizing: border-box; }
+			body {
+				margin: 0;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+				color: var(--ink);
+				background: var(--bg);
+			}
+			.app {
+				display: grid;
+				grid-template-columns: 240px 1fr;
+				min-height: 100vh;
+			}
+			.sidebar {
+				background: var(--panel);
+				border-right: 1px solid rgba(29, 41, 53, 0.08);
+				padding: 20px 12px;
+				overflow-y: auto;
+				max-height: 100vh;
+				position: sticky;
+				top: 0;
+			}
+			.sidebar h2 {
+				margin: 0 8px 16px;
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				color: var(--muted);
+			}
+			.nav-btn {
+				display: block;
+				width: 100%;
+				text-align: left;
+				padding: 8px 12px;
+				margin-bottom: 2px;
+				background: transparent;
+				border: none;
+				border-radius: 6px;
+				color: var(--ink);
+				font-size: 14px;
+				cursor: pointer;
+				text-decoration: none;
+			}
+			.nav-btn:hover { background: rgba(78, 108, 255, 0.08); }
+			.nav-btn.active { background: var(--accent); color: white; }
+			.main { padding: 32px; overflow-x: hidden; }
+			.container { max-width: 880px; margin: 0 auto; }
+			.hero { margin-bottom: 24px; }
+			.hero h1 { margin: 4px 0; font-size: 32px; }
+			.eyebrow {
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				font-size: 11px;
+				color: var(--muted);
+				margin: 0;
+			}
+			.hero-copy { color: var(--muted); margin: 8px 0 0; }
+			.feature-card {
+				background: var(--panel);
+				border-radius: 12px;
+				padding: 24px;
+				box-shadow: 0 1px 3px rgba(29, 41, 53, 0.06);
+			}
+			.anatomy {
+				display: block;
+				margin-top: 20px;
+				padding: 14px;
+				background: #0f172a;
+				color: #e2e8f0;
+				border-radius: 8px;
+				font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+				font-size: 12px;
+				white-space: pre;
+				overflow-x: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script type="module" src="./app.jsx"></script>
+	</body>
+</html>

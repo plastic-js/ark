@@ -1,0 +1,32 @@
+.sports-tree {
+    gap: 8px;
+}
+
+.sports-tree [role='treeitem'] {
+    display: grid;
+    gap: 8px;
+}
+
+.sports-tree [data-part='branch-content'] {
+    display: grid;
+    gap: 8px;
+    margin-left: 10px;
+    padding-left: 14px;
+    border-left: 1px solid rgba(15, 118, 110, 0.18);
+}
+
+.sports-tree [data-part='branch-content'][hidden] {
+    display: none;
+}
+
+.sports-tree [data-part='branch-content'] [data-part='branch-content'] {
+    margin-left: 12px;
+    padding-left: 18px;
+    border-left-color: rgba(249, 115, 22, 0.22);
+}
+
+.sports-tree [data-part='branch-content'] [data-part='branch-content'] [data-part='branch-content'] {
+    margin-left: 14px;
+    padding-left: 22px;
+    border-left-color: rgba(29, 41, 53, 0.18);
+}
